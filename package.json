@@ -1,17 +1,20 @@
 {
-  "name": "mern-boiler-plate",
-  "version": "1.0.0",
-  "description": "MERN Boiler Plate",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "sebekos",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "concurrently": "^5.1.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1"
-  }
+    "name": "mern-boiler-plate",
+    "version": "1.0.0",
+    "description": "MERN Boiler Plate",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server",
+        "server": "nodemon server"
+    },
+    "author": "sebekos",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "concurrently": "^5.1.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.9.5",
+        "nodemon": "^2.0.2"
+    }
 }
