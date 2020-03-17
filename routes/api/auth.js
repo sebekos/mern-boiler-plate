@@ -13,7 +13,7 @@ require("dotenv").config();
 // @access      Public
 router.get("/", auth, async (req, res) => {
     try {
-        const user = await User.findById(req.user.id).select("-password");
+        const user = await User.findById(req.user.id).select("-password -access");
         res.json(user);
     } catch (err) {
         res.status(500).send("Server Error");
@@ -27,7 +27,7 @@ router.post(
     "/",
     [
         check("username", "Email is required or format is incorrect").isEmail(),
-        check("password", "Please enter a password with 6 or more characters").exists()
+        check("password", "Password is required").exists()
     ],
     async (req, res) => {
         const errors = validationResult(req);
