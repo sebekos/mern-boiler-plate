@@ -9,6 +9,8 @@ import Dashboard from "./components/dashboard/dashboard";
 import Homepage from "./components/homepage/Homepage";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const App = () => {
     useEffect(() => {
@@ -18,6 +20,7 @@ const App = () => {
     return (
         <Provider store={store}>
             <Router>
+                <ToastContainer />
                 <Switch>
                     <Route exact path="/" component={Homepage} />
                     <Route exact path="/login" component={Login} />

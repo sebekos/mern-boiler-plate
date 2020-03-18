@@ -1,4 +1,5 @@
 import { LOGIN_SUCCESS, LOGIN_FAIL, USER_LOADED, AUTH_ERROR, LOGOUT, CLEAR_PROFILE } from "../constants/types";
+import { toast } from "react-toastify";
 import setAuthToken from "../../utils/setAuthToken";
 import axios from "axios";
 
@@ -35,10 +36,12 @@ export const login = formData => async dispatch => {
             payload: res.data
         });
         dispatch(loadUser());
+        toast.success("Login successful");
     } catch (err) {
         dispatch({
             type: LOGIN_FAIL
         });
+        toast.error("Login failed");
     }
 };
 
